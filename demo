@@ -1,0 +1,6 @@
+---
+  - name: Shell script
+    hosts: all
+    tasks:
+      - name: run shell script
+        command: sh /u008/scripts/demo.sh
