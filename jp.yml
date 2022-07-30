@@ -1,0 +1,7 @@
+---
+  - name: Shell script
+    hosts: all
+    tasks:
+      - name: run shell script
+        shell: |
+          echo -e "\n welcome to Ansible tower \n"
