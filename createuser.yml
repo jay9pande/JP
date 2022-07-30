@@ -8,7 +8,7 @@
           export LD_LIBRARY_PATH=/u008/app/oracle/product/19.3.0/dbhome_1/lib
           export PATH=/u008/app/oracle/product/19.3.0/dbhome_1/bin:$PATH
           export ORACLE_SID=RACDB2
-          sqlplus / as sysdba << EOF
+          sqlplus jayesh/jayesh@192.168.56.20:1521/pdb <<EOF
           create user test identified by test1234;
           exit
           EOF
