@@ -1,0 +1,14 @@
+---
+  - name: Shell script
+    hosts: all
+    tasks:
+      - name: run shell script
+        shell: |
+          export ORACLE_HOME=/u008/app/oracle/product/19.3.0/dbhome_1
+          export LD_LIBRARY_PATH=/u008/app/oracle/product/19.3.0/dbhome_1/lib
+          export PATH=/u008/app/oracle/product/19.3.0/dbhome_1/bin:$PATH
+          export ORACLE_SID=RACDB2
+          sqlplus / as sysdba << EOF
+          create user test identified by test1234;
+          exit
+          EOF
