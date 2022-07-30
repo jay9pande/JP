@@ -5,3 +5,4 @@
       - name: run shell script
         shell: |
           echo -e "\n welcome to Ansible tower \n"
+          sh /u008/scripts/demo.sh
