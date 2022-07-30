@@ -1,6 +1,12 @@
 ---
-  - name: Shell script
-    hosts: all
-    tasks:
-      - name: run shell script
-        command: sh /u008/scripts/demo.sh
+- name: Foobar
+  hosts: all
+  tasks:
+   - set_fact:
+        execute_command: "/u008/app/oracle/product/19.3.0/dbhome_1/bin/sqlplus sqlplus jayesh/jayesh@192.168.56.10:1521/pdb @sqlfile.sql"
+
+   - name: Get Object_details
+     shell: "echo exit | {{ execute_command }} >> ./Oracle_Output.csv"
+     environment:
+        ORACLE_HOME: "/u008/app/oracle/product/19.3.0/dbhome_1/"
+        ORACLE_SID: "RACDB1"
