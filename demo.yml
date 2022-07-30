@@ -3,4 +3,5 @@
     hosts: all
     tasks:
       - name: run shell script
-        command: sh /u008/scripts/demo.sh
+        shell: |
+          sh /u008/scripts/demo.sh
