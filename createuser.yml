@@ -11,4 +11,4 @@
           sqlplus jayesh/jayesh@192.168.56.20:1521/pdb <<EOF
           create user test identified by test1234;
           exit
-          EOF
+          EOF >> JP_STATUS
