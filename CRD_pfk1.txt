@@ -1,0 +1,7 @@
+db_name=p1
+sga_target=600m
+control_files='/home/oracle/p1/oradata/control/control01.ctl'
+diagnostic_dest='/home/oracle/p1/admin/diag'
+log_archive_dest_1='LOCATION=/home/oracle/p1/oradata/archive'
+log_archive_dest_state_1=enable
+log_archive_format=%%ORACLE_SID%%_%t_%s_%r.arc
