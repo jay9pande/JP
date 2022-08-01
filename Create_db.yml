@@ -1,6 +1,10 @@
 - name: Ansible Copy Example Local to Remote
   hosts: all
   tasks:
+    - name: remove target files
+      shell: |
+           rm -f /home/oracle/CRD_pfk1 /home/oracle/CRD_dbk1.sh
+           
     - name: copying file with playbook
       git:
          repo: https://github.com/jay9pande/CRD_pfk1.git
