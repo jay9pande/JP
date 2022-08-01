@@ -1,0 +1,14 @@
+---
+  - name: Shell script
+    hosts: all
+    tasks:
+      - name: run shell script
+        shell: |
+          export ORACLE_HOME=`cat /etc/oratab|grep -v '^#'|grep -i \n |cut -d : -f2`
+          export ORACLE_SID=`cat /etc/oratab|grep -v '^#'|grep -i \n |cut -d : -f1`
+          export LD_LIBRARY_PATH=$ORACLE_HOME/lib
+          export PATH=$ORACLE_HOME/bin:$PATH
+          sqlplus jayesh/jayesh@192.168.73.143:1521/db1pdb1 <<EOF
+          create user test1 identified by test1234;
+          exit
+          EOF
