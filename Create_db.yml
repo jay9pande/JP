@@ -2,12 +2,12 @@
   hosts: all
   tasks:
     - name: copying file with playbook
-       git:
-         repo: https://github.com/jay9pande/CRD_pfk1.git
-         dest: /home/oracle/CRD_pfk1
-         owner: oracle
-         group: oinstall
-         mode: 0644
+         git:
+            repo: https://github.com/jay9pande/CRD_pfk1.git
+            dest: /home/oracle/CRD_pfk1
+            owner: oracle
+            group: oinstall
+            mode: 0644
 
     - name: copying file with playbook
          git:
