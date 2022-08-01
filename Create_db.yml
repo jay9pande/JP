@@ -3,19 +3,19 @@
   tasks:
     - name: copying file with playbook
        git:
-        repo: https://github.com/jay9pande/CRD_pfk1.git
-        dest: /home/oracle/CRD_pfk1
-        owner: oracle
-        group: oinstall
-        mode: 0644
+         repo: https://github.com/jay9pande/CRD_pfk1.git
+         dest: /home/oracle/CRD_pfk1
+         owner: oracle
+         group: oinstall
+         mode: 0644
 
     - name: copying file with playbook
-      git:
-        repo: https://github.com/jay9pande/CRD_dbk1.sh.git
-        dest: /home/oracle/CRD_dbk1.sh
-        owner: oracle
-        group: oinstall
-        mode: 0644
+         git:
+           repo: https://github.com/jay9pande/CRD_dbk1.sh.git
+           dest: /home/oracle/CRD_dbk1.sh
+           owner: oracle
+           group: oinstall
+           mode: 0644
     - name: run shell script
       shell: |
         export ORACLE_HOME=`cat /etc/oratab|grep -v '^#'|grep -i \n |cut -d : -f2`
