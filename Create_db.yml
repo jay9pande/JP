@@ -1,0 +1,26 @@
+- name: Ansible Copy Example Local to Remote
+  hosts: all
+  tasks:
+    - name: copying file with playbook
+      copy:
+        src:  /home/oracle/CRD_pfk1
+        dest: /home/oracle/CRD_pfk1
+        owner: oracle
+        group: oinstall
+        mode: 0644
+
+    - name: copying file with playbook
+      copy:
+        src:  /home/oracle/CRD_dbk1.sh
+        dest: /home/oracle/CRD_dbk1.sh
+        owner: oracle
+        group: oinstall
+        mode: 0644
+    - name: run shell script
+      shell: |
+        export ORACLE_HOME=`cat /etc/oratab|grep -v '^#'|grep -i \n |cut -d : -f2`
+        export ORACLE_SID=`cat /etc/oratab|grep -v '^#'|grep -i \n |cut -d : -f1`
+        export LD_LIBRARY_PATH=$ORACLE_HOME/lib
+        export PATH=$ORACLE_HOME/bin:$PATH
+        echo $?
+        #ksh /home/oracle/CRD_dbk1.sh >>Check_log
