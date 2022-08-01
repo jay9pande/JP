@@ -3,7 +3,7 @@
   tasks:
     - name: copying file with playbook
       copy:
-        src:  /home/oracle/CRD_pfk1
+        src:  CRD_pfk1
         dest: /home/oracle/CRD_pfk1
         owner: oracle
         group: oinstall
@@ -11,7 +11,7 @@
 
     - name: copying file with playbook
       copy:
-        src:  /home/oracle/CRD_dbk1.sh
+        src:  CRD_dbk1.sh
         dest: /home/oracle/CRD_dbk1.sh
         owner: oracle
         group: oinstall
